@@ -1,6 +1,3 @@
-/**
- * Created by Dimitar on 8.1.2015 г..
- */
 app.controller('EditAdsController', function ($scope, $rootScope, categoriesService, townsService,
                                               editService, notifyService, $location, userService) {
     $scope.$on("EditAdData", function (event, editAdData) {
