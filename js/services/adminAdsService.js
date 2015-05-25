@@ -1,6 +1,3 @@
-/**
- * Created by Dimitar on 11.1.2015 г..
- */
 'use strict';
 
 app.factory('adminAdsService',

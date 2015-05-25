@@ -1,6 +1,3 @@
-/**
- * Created by Dimitar on 6.1.2015 г..
- */
 app.controller('UserAdsController',
     function ($scope, $location, $rootScope, userService, authService, notifyService, pageSize) {
     $scope.personalAdsParams = {

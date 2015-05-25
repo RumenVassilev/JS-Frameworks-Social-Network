@@ -1,6 +1,3 @@
-/**
- * Created by Dimitar on 8.1.2015 г..
- */
 'use strict';
 
 app.controller('LeftSidebarController', function ($scope, $rootScope) {

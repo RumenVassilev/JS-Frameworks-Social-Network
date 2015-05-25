@@ -1,6 +1,3 @@
-/**
- * Created by Dimitar on 7.1.2015 г..
- */
 app.controller('ChangePasswordController', function ($scope, editService, notifyService, $location) {
     $scope.changePassword = function (data) {
         editService.changePassword(
