@@ -1,5 +1,5 @@
-app.controller('EditProfileController', function ($scope, $rootScope, notifyService, userService,
-                                                  editService, townsService) {
+app.controller('EditProfileController',
+    function ($scope, $rootScope, notifyService, $location, userService, editService, townsService) {
     $rootScope.showRightSidebar = false;
     $rootScope.ngViewSize = 'col-md-10';
 
@@ -20,7 +20,7 @@ app.controller('EditProfileController', function ($scope, $rootScope, notifyServ
         editService.editProfile(data,
         function success () {
             notifyService.showInfo('Success: profile edited!');
-            $location.path('/#');
+            $location.path('/');
         }, function error (err) {
             notifyService.showError('Error: ' + err);
         });
