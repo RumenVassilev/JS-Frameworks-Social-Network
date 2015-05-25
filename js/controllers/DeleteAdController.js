@@ -1,6 +1,3 @@
-/**
- * Created by Dimitar on 8.1.2015 г..
- */
 app.controller('DeleteAdController', function ($scope, $location, $rootScope, userService, notifyService) {
     $scope.deleteAd = function (id) {
         userService.deleteAd(

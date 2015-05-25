@@ -1,6 +1,3 @@
-/**
- * Created by Dimitar on 7.1.2015 г..
- */
 app.controller('EditProfileController', function ($scope, $rootScope, notifyService, userService,
                                                   editService, townsService) {
     $rootScope.showRightSidebar = false;
@@ -23,6 +20,7 @@ app.controller('EditProfileController', function ($scope, $rootScope, notifyServ
         editService.editProfile(data,
         function success () {
             notifyService.showInfo('Success: profile edited!');
+            $location.path('/#');
         }, function error (err) {
             notifyService.showError('Error: ' + err);
         });
