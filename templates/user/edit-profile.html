@@ -1,0 +1,36 @@
+<div class="box">
+    <h2>Edit Profile</h2>
+
+    <p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" ng-value="userData.name" ng-model="userData.name" required />
+    </p>
+
+    <p>
+        <label for="email">Email:</label>
+        <input type="text" id="email" ng-value="userData.email" ng-model="userData.email" required />
+    </p>
+
+    <p>
+        <label>Gender:</label>
+            <label class="radio-inline" for="male">
+                <input ng-model="userData.gender" id="male" name="gender" type="radio" value="1">
+                Male
+            </label>
+            <label class="radio-inline" for="female">
+                <input ng-model="userData.gender" id="female" name="gender" type="radio" value="2">
+                Female
+            </label>
+            <label class="radio-inline" for="other">
+                <input ng-model="userData.gender" id="other" name="gender" type="radio" value="0">
+                Other
+            </label>
+            <span class="field-validation-valid help-block"></span>
+    </p>
+
+    <p>
+        <a ng-click="editProfile(userData)" class="button">Edit Profile</a>
+        <a href="#/user/password" class="button">Change Password</a>
+        <a class="link" ng-click="goHome()" href="#/">Cancel</a>
+    </p>
+</div>

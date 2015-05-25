@@ -1,0 +1,30 @@
+/**
+ * Created by Dimitar on 7.1.2015 г..
+ */
+app.controller('EditProfileController', function ($scope, $rootScope, notifyService, userService,
+                                                  editService, townsService) {
+    $rootScope.showRightSidebar = false;
+    $rootScope.ngViewSize = 'col-md-10';
+
+    //$scope.data = function () {
+    //    userService.getUserData(
+    //        null,
+    //        function (data) {
+    //            $scope.userData = data;
+    //            $scope.userData.username = JSON.parse(sessionStorage['currentUser']).username;
+    //        },
+    //        function (err) {
+    //            console.log('Error getting user data: ' + err);
+    //        }
+    //    );
+    //};
+
+    $scope.editProfile = function (data) {
+        editService.editProfile(data,
+        function success () {
+            notifyService.showInfo('Success: profile edited!');
+        }, function error (err) {
+            notifyService.showError('Error: ' + err);
+        });
+    };
+});
