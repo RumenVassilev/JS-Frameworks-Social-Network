@@ -3,7 +3,7 @@
 app.factory('adsService',
     function ($resource, baseServiceUrl) {
         var adsResource = $resource(
-            baseServiceUrl + '/api/ads',
+            baseServiceUrl + '/api/Posts',
             null,
             {
                 'getAll': {method:'GET'}
@@ -34,16 +34,16 @@ app.factory('categoriesService',
 );
 
 
-app.factory('townsService',
-    function ($resource, baseServiceUrl) {
-        var townsResource = $resource(
-            baseServiceUrl + '/api/towns'
-        );
-
-        return {
-            getTowns: function(success, error) {
-                return townsResource.query(success, error);
-            }
-        }
-    }
-);
+//app.factory('townsService',
+//    function ($resource, baseServiceUrl) {
+//        var townsResource = $resource(
+//            baseServiceUrl + '/api/towns'
+//        );
+//
+//        return {
+//            getTowns: function(success, error) {
+//                return townsResource.query(success, error);
+//            }
+//        }
+//    }
+//);
