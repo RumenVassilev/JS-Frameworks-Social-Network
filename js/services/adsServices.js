@@ -3,7 +3,7 @@
 app.factory('adsService',
     function ($resource, baseServiceUrl) {
         var adsResource = $resource(
-            baseServiceUrl + '/api/Posts',
+            baseServiceUrl + '/api/Posts/4',
             null,
             {
                 'getAll': {method:'GET'}
