@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('HomeController',
-    function ($scope, $rootScope, adsService, authService, adminAdsService, notifyService, pageSize) {
+    function ($scope, $rootScope, adsService, authService, notifyService, pageSize) {
         //$scope.adsParams = {
         //    'StartPostId' : 5649,
         //    'PageSize' : pageSize
@@ -24,17 +24,6 @@ app.controller('HomeController',
            );
        };
 
-       $scope.deleteAd = function (ad) {
-           adminAdsService.deleteAd(
-               ad,
-               function success () {
-                   notifyService.showInfo('Success: Ad deleted!');
-                   $scope.reloadAdminAds();
-               }, function error () {
-                   notifyService.showError('Error');
-               }
-           );
-       };
        $scope.reloadAds();
     }
 );

@@ -21,13 +21,4 @@ app.controller('LeftSidebarController', function ($scope, $rootScope) {
         $rootScope.$broadcast("adsByType", status);
     };
 
-    $scope.adminAdsMenuClick = function (option) {
-        $scope.adminAdsMenuOption = option;
-        $rootScope.$broadcast("adminAdsMenuClick", option);
-    };
-
-    $scope.adminAdmMenuClick = function (option) {
-        $scope.adminAdmMenuOption = option;
-        $rootScope.$broadcast("adminAdmMenuClick", option);
-    };
 });
