@@ -3,8 +3,9 @@
 app.controller('HomeController',
     function ($scope, $rootScope, adsService, authService, adminAdsService, notifyService, pageSize) {
         $scope.adsParams = {
-            'startPage' : 1,
-            'pageSize' : pageSize
+            'PageSize' : pageSize,
+            'StartPostId' : 1
+
         };
 
         $scope.userData = authService.getCurrentUser();
