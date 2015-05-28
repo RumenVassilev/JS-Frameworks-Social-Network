@@ -8,6 +8,7 @@ app.controller('FriendsController',
         //};
 
         $scope.userData = authService.getCurrentUser();
+        console.log($scope.userData);
         $rootScope.ngViewSize = 'col-md-2';
 
         $scope.getFriends = function() {
@@ -23,6 +24,6 @@ app.controller('FriendsController',
             );
         };
 
-        $scope.getOwnFriends();
+        $scope.getFriends();
     }
 );

@@ -28,7 +28,7 @@ app.config(function ($routeProvider) {
 
     $routeProvider.when('/api/me/friends',{
        templateUrl: 'templates/user/get-friends.html',
-        controller: 'GetFriends'
+        controller: 'FriendsController'
     });
 
     $routeProvider.when('/api/me/friendsRequest', {

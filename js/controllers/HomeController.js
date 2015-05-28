@@ -2,10 +2,6 @@
 
 app.controller('HomeController',
     function ($scope, $rootScope, adsService, authService, notifyService, pageSize) {
-        //$scope.adsParams = {
-        //    'StartPostId' : 5649,
-        //    'PageSize' : pageSize
-        //};
 
         $scope.userData = authService.getCurrentUser();
         console.log($scope.userData);

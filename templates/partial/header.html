@@ -34,7 +34,11 @@
       <a ng-click="logout()" ng-click="menuClick('Logout')">Logout</a>
     </div>
     <div ng-class="{'selected': selectedMenuItem =='Friends request'}">
-      <a href="#/user/friendsRequest" ng-click="menuClick('Friends request')">Friends request</a> </div>
+      <a href="#/user/friendsRequest" ng-click="menuClick('Friends request')">Friends request</a>
+    </div>
+        <div ng-class="{'selected': selectedMenuItem =='Friends'}">
+            <a href="#/api/me/friends" ng-click="menuClick('Friends')">Friends</a>
+        </div>
   </div>
 </div>
 
