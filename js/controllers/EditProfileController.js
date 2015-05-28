@@ -1,5 +1,5 @@
 app.controller('EditProfileController',
-    function ($scope, $rootScope, notifyService, $location, userService, editService, townsService) {
+    function ($scope, $rootScope, notifyService, $location, userService, editService) {
     $rootScope.showRightSidebar = false;
     $rootScope.ngViewSize = 'col-md-10';
 

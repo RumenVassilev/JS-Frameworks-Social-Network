@@ -37,12 +37,7 @@
             <option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
         </select>
     </p>
-    <p>
-        <label for="town">Town: </label>
-        <select id="town" ng-selected="adData.townId" ng-model="adData.townId">
-            <option ng-repeat="town in towns" value="{{town.id}}">{{town.name}}</option>
-        </select>
-    </p>
+
     <p>
         <span class="button" ng-click="editAd(adData)">Edit</span>
         <a href="#/user/ads/delete/{{adData.id}}" ng-click="deleteAdButtonClicked(adData.id)"

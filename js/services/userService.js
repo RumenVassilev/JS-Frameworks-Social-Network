@@ -42,23 +42,23 @@ app.factory('userService',
                 $http(request).success(success).error(error);
             },
 
-            deactivateAd: function (id, success, error) {
-                var request = {
-                    method: 'PUT',
-                    url: baseServiceUrl + '/api/user/ads/deactivate/' + id,
-                    headers: authService.getAuthHeaders()
-                };
-                $http(request).success(success).error(error);
-            },
+            //deactivateAd: function (id, success, error) {
+            //    var request = {
+            //        method: 'PUT',
+            //        url: baseServiceUrl + '/api/user/ads/deactivate/' + id,
+            //        headers: authService.getAuthHeaders()
+            //    };
+            //    $http(request).success(success).error(error);
+            //},
 
-            publishAgainAd: function (id, success, error) {
-                var request = {
-                    method: 'PUT',
-                    url: baseServiceUrl + '/api/user/ads/publishAgain/' + id,
-                    headers: authService.getAuthHeaders()
-                };
-                $http(request).success(success).error(error);
-            },
+            //publishAgainAd: function (id, success, error) {
+            //    var request = {
+            //        method: 'PUT',
+            //        url: baseServiceUrl + '/api/user/ads/publishAgain/' + id,
+            //        headers: authService.getAuthHeaders()
+            //    };
+            //    $http(request).success(success).error(error);
+            //},
 
             deleteAd: function (id, success, error) {
                 var request = {

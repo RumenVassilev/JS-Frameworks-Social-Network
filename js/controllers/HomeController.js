@@ -2,23 +2,22 @@
 
 app.controller('HomeController',
     function ($scope, $rootScope, adsService, authService, adminAdsService, notifyService, pageSize) {
-        $scope.adsParams = {
-            'PageSize' : pageSize,
-            'StartPostId' : 1
-
-        };
+        //$scope.adsParams = {
+        //    'StartPostId' : 5649,
+        //    'PageSize' : pageSize
+        //};
 
         $scope.userData = authService.getCurrentUser();
         $rootScope.ngViewSize = 'col-md-2';
 
         $scope.reloadAds = function() {
             adsService.getAds(
-                $scope.adsParams,
                function success(data) {
                    $scope.ads = data;
                },
                function error(err) {
-                   notifyService.showError("Cannot load ads", err);
+                   console.log(err);
+                   notifyService.showError("Cannot load news", err);
                }
            );
        };
@@ -77,20 +76,6 @@ app.controller('HomeController',
        else {
            $scope.reloadAds();
        }
-
-       // This event is sent by RightSideBarController when the current category is changed
-       $scope.$on("categorySelectionChanged", function(event, selectedCategoryId) {
-           $scope.adsParams.categoryId = selectedCategoryId;
-           $scope.adsParams.startPage = 1;
-           $scope.reloadAds();
-       });
-
-       // This event is sent by RightSideBarController when the current town is changed
-       $scope.$on("townSelectionChanged", function(event, selectedTownId) {
-           $scope.adsParams.townId = selectedTownId;
-           $scope.adsParams.startPage = 1;
-           $scope.reloadAds();
-       });
 
        $scope.$on("adminAdsMenuClick", function (event, option) {
            $scope.adsParams.status = option;
