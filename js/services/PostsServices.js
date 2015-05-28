@@ -1,15 +1,36 @@
-app.factory('adsService', function ($http, baseServiceUrl) {
-    var service = {};
+'use strict';
 
-    var serviceUrl = baseServiceUrl;
+//app.factory('adsService',
+//    function ($resource, baseServiceUrl, authService) {
+//        var adsResource = $resource(
+//            baseServiceUrl + '/api/me/feed?StartPostId=&PageSize=5',
+//            {
+//                headers: authService.getAuthHeaders()
+//            },
+//            {
+//                'getAll': {method:'GET'}
+//            }
+//        );
+//
+//        return {
+//            getAds: function(params, success, error) {
+//                return adsResource.getAll(params, success, error);
+//            }
+//        }
+//    }
+//
+//);
+app.factory('adsService', function ($http, baseServiceUrl, authService) {
+    return {
+        getAds: function (params, success, error) {
+            var request = {
+                method: 'get',
+                url: baseServiceUrl + '/api/me/feed?StartPostId=&PageSize=5',
+                headers: authService.getAuthHeaders(),
+                data: params
+            };
+            $http(request).success(success).error(error);
+        }
 
-    service.getNewsFeed = function (success, error) {
-        $http.get(serviceUrl + 'api/me/feed?StartPostId=&PageSize=10', {headers: this.getHeaders()})
-            .success(function (data, status, headers, config) {
-                success(data);
-            }).error(function (data) {
-                error(data);
-            });
-    };
-    return service;
+    }
 });
