@@ -11,9 +11,9 @@
 <!-- Login / register box for anonymous site visitors  -->
 <!-- <div class="box" ng-if="authService.isAnonymous()">
     <p>To publish a new ad, please login.</p>
-    <a href="#/login" class="button">Login</a>
+    <a href="#/login" class="button">Login</a>-->
     <a href="#/register" class="button">Register</a>
-</div> -->
+</div>
 
 <!-- Navigation box for logged in normal users (not admins) -->
 <div ng-if="authService.isNormalUser()" class="box">
@@ -27,6 +27,8 @@
         <li ng-class="{'selected': selectedMenuItem == 'Logout'}">
             <a ng-click="logout()" ng-click="menuClick('Logout')">Logout</a>
         </li>
+        <li ng-class="{'selected': selectedMenuItem =='My wall'}">
+            <a href="#/myWall" ng-click="menuClick('My wall')">My wall</a> </li>
     </ul>
 </div>
 
