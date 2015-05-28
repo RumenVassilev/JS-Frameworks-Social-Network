@@ -8,52 +8,18 @@ app.controller('HomeController',
         //};
 
         $scope.userData = authService.getCurrentUser();
+        console.log($scope.userData);
         $rootScope.ngViewSize = 'col-md-2';
 
         $scope.reloadAds = function() {
-            adsService.getAds(
+            adsService.getAds($scope.userData,
                function success(data) {
-                   $scope.ads = data;
+                   $scope.posts = data;
+                   console.log($scope.posts)
                },
                function error(err) {
                    console.log(err);
                    notifyService.showError("Cannot load news", err);
-               }
-           );
-       };
-
-       $scope.reloadAdminAds = function () {
-           adminAdsService.getAdminAds(
-               $scope.adsParams,
-               function success(data) {
-                   $scope.ads = data;
-               },
-               function error(err) {
-                   notifyService.showError("Cannot load ads", err);
-               }
-           );
-       };
-
-       $scope.approveAd = function (ad) {
-           adminAdsService.approveAd(
-               ad,
-               function success () {
-                   notifyService.showInfo('Success: Ad approved!');
-                   ad.status = 'Published';
-               }, function error () {
-                   notifyService.showError('Error');
-               }
-           );
-       };
-
-       $scope.rejectAd = function (ad) {
-           adminAdsService.rejectAd(
-               ad,
-               function success () {
-                   notifyService.showInfo('Success: Ad rejected!');
-                   ad.status = 'Rejected';
-               }, function error () {
-                   notifyService.showError('Error');
                }
            );
        };
@@ -69,18 +35,6 @@ app.controller('HomeController',
                }
            );
        };
-
-       if (authService.isAdmin()) {
-           $scope.reloadAdminAds();
-       }
-       else {
-           $scope.reloadAds();
-       }
-
-       $scope.$on("adminAdsMenuClick", function (event, option) {
-           $scope.adsParams.status = option;
-           $scope.adsParams.startPage = 1;
-           $scope.reloadAdminAds();
-       });
+       $scope.reloadAds();
     }
 );
