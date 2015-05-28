@@ -181,3 +181,8 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
 .home #username{
     font-size: 32px;
 }
+#app-footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}

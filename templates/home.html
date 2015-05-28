@@ -5,7 +5,7 @@
 <ul class="home" ng-if="authService.isLoggedIn()">
     <h1 style="font-size: 5em">News Feed</h1>
 </ul>
-<ul class="ads">
+<ul class="posts" ng-if="authService.isLoggedIn()">
     <li ng-repeat="post in posts" class="box" data-id="{{ad.id}}">
         <p>{{post.author.profileImageData}}<strong>{{post.author.name}}</strong></p>
         <p>{{post.date}}</p>

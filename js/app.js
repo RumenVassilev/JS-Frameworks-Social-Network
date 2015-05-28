@@ -26,7 +26,12 @@ app.config(function ($routeProvider) {
         controller: 'UserPublishNewAdController'
     });
 
-    $routeProvider.when('/user/ads', {
+    $routeProvider.when('/api/me/friends',{
+       templateUrl: 'templates/user/get-friends.html',
+        controller: 'GetFriends'
+    });
+
+    $routeProvider.when('/api/me/friendsRequest', {
         templateUrl: 'templates/user/personal-ads.html',
         controller: 'UserAdsController'
     });
