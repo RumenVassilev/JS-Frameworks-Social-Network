@@ -35,8 +35,20 @@ app.controller('FriendsController',
                 }
             );
         };
+        $scope.acceptRequest = function(id){
+            friendsServices.acceptFriendRequest(id,
+            function success(data){
+                notifyService.showInfo("You have accepted the request");
+
+            },
+                function error(err){
+                    notifyService.showError("Cannot accept friend request", err);
+                }
+            );
+        };
 
         $scope.getFriends();
         $scope.getRequests();
+       //$scope.acceptRequest();
     }
 );

@@ -104,5 +104,5 @@ function checkedForm(){
 function cancel(){
     //var cancel = document.getElementById("cancelReg");
 
-    window.location.assign("http://localhost:36735/Exam/index.html#/")
+    //window.location.assign("http://localhost:36735/Exam/index.html#/")
 }

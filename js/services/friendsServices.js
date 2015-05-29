@@ -20,6 +20,15 @@ app.factory('friendsServices', function ($http, baseServiceUrl, authService) {
                 data: params
             };
             $http(request).success(success).error(error);
+        },
+        acceptFriendRequest: function (id, success, error){
+            var request = {
+                method: 'put',
+                url: baseServiceUrl + '/api/me/requests/' + id + '?status=approved',
+                headers: authService.getAuthHeaders(),
+                data: id
+            };
+            $http(request).success(success).error(error);
         }
     }
 });
