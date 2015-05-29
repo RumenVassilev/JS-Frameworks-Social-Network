@@ -4,6 +4,6 @@
         <h2 class="friendRequestName">{{userData.user.name}}</h2>
         <img class="thumbnail friendRequestImage" ng-src="{{userData.user.profileImageData}}" alt=""/>
         <button class="btn-lg btn-group-lg btn-success friendRequestButton" ng-click="acceptRequest(userData.id)"><a href="#/" style="color: white">Accept</a></button>
-        <button class="btn-lg btn-group-lg btn-danger friendRequestButton" ng-click="rejectFriendRequest(userData.id)">Reject</button>
+        <button class="btn-lg btn-group-lg btn-danger friendRequestButton" ng-click="rejectRequest(userData.id)"><a href="#/"style="color: white">Reject</a></button>
     </div>
 </div>

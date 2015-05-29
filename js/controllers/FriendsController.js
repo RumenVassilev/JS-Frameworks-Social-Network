@@ -46,6 +46,16 @@ app.controller('FriendsController',
                 }
             );
         };
+        $scope.rejectRequest = function(id){
+            friendsServices.rejectFriendRequest(id,
+            function success(data){
+                notifyService.showInfo("You have rejected the request");
+            },
+                function error(err){
+                    notifyService.showError("Cannot reject friend request", err);
+                }
+            );
+        };
 
         $scope.getFriends();
         $scope.getRequests();
