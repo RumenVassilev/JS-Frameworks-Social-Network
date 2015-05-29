@@ -31,9 +31,9 @@ app.config(function ($routeProvider) {
         controller: 'FriendsController'
     });
 
-    $routeProvider.when('/api/me/friendsRequest', {
-        templateUrl: 'templates/user/personal-ads.html',
-        controller: 'UserAdsController'
+    $routeProvider.when('/user/friendsRequest', {
+        templateUrl: 'templates/user/friends-requests.html',
+        controller: 'FriendsController'
     });
 
     $routeProvider.when('/user/profile', {

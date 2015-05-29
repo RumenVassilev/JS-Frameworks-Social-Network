@@ -8,22 +8,35 @@ app.controller('FriendsController',
         //};
 
         $scope.userData = authService.getCurrentUser();
-        console.log($scope.userData);
+        //console.log($scope.userData);
         $rootScope.ngViewSize = 'col-md-2';
 
         $scope.getFriends = function() {
             friendsServices.getOwnFriends($scope.userData,
                 function success(data) {
                     $scope.friends = data;
-                    console.log($scope.friends)
+                   // console.log($scope.friends)
                 },
                 function error(err) {
-                    console.log(err);
+                    //console.log(err);
                     notifyService.showError("Cannot load friends", err);
+                }
+            );
+        };
+        $scope.getRequests = function(){
+            friendsServices.getFriendsRequests($scope.userData,
+            function success(data){
+                $scope.friendsRequests = data;
+                console.log($scope.friendsRequests);
+            },
+                function error(err){
+                    notifyService.showError("Cannot load friends requests", err);
+
                 }
             );
         };
 
         $scope.getFriends();
+        $scope.getRequests();
     }
 );

@@ -9,8 +9,16 @@ app.factory('friendsServices', function ($http, baseServiceUrl, authService) {
                 headers: authService.getAuthHeaders(),
                 data: params
             };
-            console.log(request);
 
+            $http(request).success(success).error(error);
+        },
+        getFriendsRequests: function (params, success, error){
+            var request = {
+                method: 'get',
+                url: baseServiceUrl + '/api/me/requests',
+                headers: authService.getAuthHeaders(),
+                data: params
+            };
             $http(request).success(success).error(error);
         }
     }
