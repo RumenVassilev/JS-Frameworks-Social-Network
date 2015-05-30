@@ -27,10 +27,37 @@
             </label>
             <span class="field-validation-valid help-block"></span>
     </p>
+    <div class="box">
+        <div class="form-group">
+            <img class="thumbnail picture-preview" id="profilePictureData" src="{{userData.profileImageData}}" />
+        </div>
+        <div class="form-group">
+            <p><strong>Profile Image:</strong></p>
+            <p class="picture-name"></p>
+            <input type="file" id="picture" class="btn btn-md btn-info" onchange="angular.element(this).scope().fileSelected(this)" />/>
+            <p>Size limit: 128KB</p>
+            <button type="button" ng-value="userData.profileImageData" ng-model="userData.profileImageData" id="upload-file-button" class="btn btn-md btn-info">Upload</button>
+        </div>
+    </div>
+    <div class="box">
+        <div>
+            <div >
+                <img id="coverPictureData" src="{{userData.coverImageData}}" />
+            </div>
+            <div >
+                <p><strong>Cover Image:</strong></p>
+                <p class="picture-name"></p>
+                <input type="file" id="coverPicture" class="btn btn-md btn-info" />
+                <p>Size limit: 1028KB</p>
+                <button type="button" ng-value="userData.coverImageData" ng-model="userData.coverImageData" id="upload-cover-file-button" class="btn btn-md btn-info">Upload</button>
 
+            </div>
+        </div>
+    </div>
     <p>
         <a ng-click="editProfile(userData)" class="button">Edit Profile</a>
         <a href="#/user/password" class="button">Change Password</a>
         <a class="link" ng-click="goHome()" href="#/">Cancel</a>
     </p>
+
 </div>

@@ -182,7 +182,7 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
     font-size: 32px;
 }
 #app-footer {
-    position: absolute;
+    position: relative;
     bottom: 0px;
     width: 100%;
 }

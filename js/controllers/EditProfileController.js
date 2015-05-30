@@ -17,6 +17,7 @@ app.controller('EditProfileController',
     //};
 
     $scope.editProfile = function (data) {
+        console.log(data);
         editService.editProfile(data,
         function success () {
             notifyService.showInfo('Success: profile edited!');
@@ -25,4 +26,18 @@ app.controller('EditProfileController',
             notifyService.showError('Error: ' + err);
         });
     };
+        $scope.fileSelected = function(fileInputField) {
+            delete $scope.userData.profileImageData;
+            var file = fileInputField.files[0];
+            if (file.type.match(/image\/.*/)) {
+                var reader = new FileReader();
+                reader.onload = function() {
+                    $scope.userData.profileImageData = reader.result;
+                    $(".image-box").html("<img src='" + reader.result + "'>");
+                };
+                reader.readAsDataURL(file);
+            } else {
+                $(".image-box").html("<p>File type not supported!</p>");
+            }
+        };
 });

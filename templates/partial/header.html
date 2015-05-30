@@ -1,5 +1,8 @@
 <div ng-if="authService.isLoggedIn()" class="user-area">
-  <span>Hello, {{authService.getCurrentUser().userName}}</span>
+  <span>Hello, {{authService.getCurrentUser().userName}} </span>
+    <div class="image-container" id="userProfileImage" >
+        <img  class="smallThumbnail" src="{{userData.profileImageData}}"/>
+    </div>
   <a ng-click="logout()" class="link">Logout</a>
 </div>
 <span ng-if="authService.isLoggedIn()">Social Network</span>

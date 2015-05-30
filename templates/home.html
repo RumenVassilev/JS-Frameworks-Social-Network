@@ -6,8 +6,9 @@
     <h1 style="font-size: 5em">News Feed</h1>
 </ul>
 <ul class="posts" ng-if="authService.isLoggedIn()">
-    <li ng-repeat="post in posts" class="box" data-id="{{ad.id}}">
-        <a href="#/User/{{friend.username}}"><img src="{{friend.profileImageData}}" alt="" style="margin-left: 12px; width: 100px; height: 100px"/></a>
+    <li ng-repeat="post in posts" class="box" data-id="{{post.id}}">
+        <a href="#/User/{{post.author.username}}"><img src="{{post.author.profileImageData}}" alt="" style="margin-left: 12px; width: 100px; height: 100px"/></a>
+
         <p><strong>{{post.author.name}}</strong></p>
         <p>{{post.date}}</p>
         <div>{{post.postContent}}</div>
