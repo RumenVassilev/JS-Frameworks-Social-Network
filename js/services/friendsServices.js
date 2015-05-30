@@ -38,6 +38,16 @@ app.factory('friendsServices', function ($http, baseServiceUrl, authService) {
                 data: id
             };
             $http(request).success(success).error(error);
+        },
+        getUserById: function (id, success, error) {
+            var request = {
+                method: 'get',
+                url: baseServiceUrl + '/api/users/id',
+                headers: authService.getAuthHeaders(),
+                data: id
+            };
+
+            $http(request).success(success).error(error);
         }
     }
 });

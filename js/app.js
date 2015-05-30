@@ -46,9 +46,9 @@ app.config(function ($routeProvider) {
         controller: 'ChangePasswordController'
     });
 
-    $routeProvider.when('/user/ads/:id', {
-        templateUrl: 'templates/user/edit-ads.html',
-        controller: 'EditAdsController'
+    $routeProvider.when('/api/users/:id', {
+        templateUrl: 'templates/user/user-wall.html',
+        controller: 'FriendsController'
     });
 
 

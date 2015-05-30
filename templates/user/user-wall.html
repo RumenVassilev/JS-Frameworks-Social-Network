@@ -1,0 +1,17 @@
+<div id="tfheader">
+    <form id="tfnewsearch" method="get" action="http://www.google.com">
+        <input type="text" class="tftextinput" name="q" size="21" maxlength="120" data-ng-model="nameText">
+        <input type="submit" value="search" class="tfbutton">
+    </form>
+    <div class="tfclear"></div>
+</div>
+<ul class="friends" ng-if="authService.isLoggedIn()">
+    <li ng-repeat="friend in friends" class="box" data-id="{{friend.friend}}">
+        <a href="#/User/{{friend.username}}"><img src="{{friend.profileImageData}}" alt="" style="margin-left: 12px; width: 100px; height: 100px"/></a>
+        <div style="text-align: center;">{{friend.name}}</div>
+    </li>
+</ul>
+
+
+
+

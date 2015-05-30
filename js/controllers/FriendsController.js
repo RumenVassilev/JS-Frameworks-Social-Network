@@ -56,6 +56,19 @@ app.controller('FriendsController',
                 }
             );
         };
+        $scope.getUser = function(id){
+            console.log(id);
+            friendsServices.getUserById(id,
+            function success(data){
+                $scope.user = data;
+                console.log($scope.user);
+            },
+                function errror(err){
+                    notifyService.showError("Cannot find this user", err);
+
+                }
+            )
+        };
 
         $scope.getFriends();
         $scope.getRequests();

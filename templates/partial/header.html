@@ -1,12 +1,14 @@
-<div ng-if="authService.isLoggedIn()" class="user-area">
-  <span>Hello, {{authService.getCurrentUser().userName}} </span>
-    <div class="image-container" id="userProfileImage" >
-        <img  class="smallThumbnail" src="{{userData.profileImageData}}"/>
+
+<span ng-if="authService.isLoggedIn()" id="logged-header">Beer Network
+    <div ng-if="authService.isLoggedIn()" class="user-area">
+        <span>Hello, {{authService.getCurrentUser().userName}} </span>
+        <div class="image-container" id="userProfileImage" >
+            <img  class="smallThumbnail" src="{{userData.profileImageData}}"/>
+        </div>
+        <!--<a ng-click="logout()" class="link">Logout</a>-->
     </div>
-  <a ng-click="logout()" class="link">Logout</a>
-</div>
-<span ng-if="authService.isLoggedIn()">Social Network</span>
-<span ng-if="pageTitle">- {{pageTitle}}</span>
+</span>
+
 <span ng-if="authService.isAnonymous()">Social Network</span>
 <!-- Navigation box for anonymous site visitors -->
 <div ng-if="authService.isAnonymous()" class="box">
@@ -33,14 +35,15 @@
     <div ng-class="{'selected': selectedMenuItem == 'Edit profile'}">
       <a href="#/user/profile" ng-click="menuClick('Edit profile')">Edit Profile</a>
     </div>
-    <div ng-class="{'selected': selectedMenuItem == 'Logout'}">
-      <a href="#/   " ng-click="logout()" ng-click="menuClick('Logout')">Logout</a>
-    </div>
+
     <div ng-class="{'selected': selectedMenuItem =='Friends request'}">
       <a href="#/user/friendsRequest" ng-click="menuClick('Friends request')">Friends request</a>
     </div>
         <div ng-class="{'selected': selectedMenuItem =='Friends'}">
             <a href="#/api/me/friends" ng-click="menuClick('Friends')">Friends</a>
+        </div>
+        <div ng-class="{'selected': selectedMenuItem == 'Logout'}">
+            <a href="#/   " ng-click="logout()" ng-click="menuClick('Logout')">Logout</a>
         </div>
   </div>
 </div>
