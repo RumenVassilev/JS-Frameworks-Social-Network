@@ -11,7 +11,7 @@
         <p><strong>{{post.author.name}}</strong></p>
         <p>{{post.date}}</p>
         <div>{{post.postContent}}</div>
-        <span>{{post.likesCount}}</span>
+        <span>{{post.likesCount + 3}}</span>
         <span>Like</span>
         <span>{{post.totalCommentsCount}}</span>
         <span>Comments</span>
@@ -19,7 +19,7 @@
 </ul>
 
 <div ng-if="posts.posts.length==0" class="box no-data">
-    No ads found.
+    No posts found.
 </div>
 
 <pagination total-items="posts.numItems" ng-model="adsParams.startPage">
