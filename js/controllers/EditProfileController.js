@@ -4,7 +4,7 @@ app.controller('EditProfileController',
     $rootScope.ngViewSize = 'col-md-10';
 
     $scope.editProfile = function (data) {
-        console.log(data);
+        //console.log(data);
         editService.editProfile(data,
         function success () {
             notifyService.showInfo('Success: profile edited!');

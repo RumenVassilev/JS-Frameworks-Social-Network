@@ -2,10 +2,6 @@
 
 app.controller('FriendsController',
     function ($scope, $rootScope, friendsServices, authService, notifyService) {
-        //$scope.adsParams = {
-        //    'StartPostId' : 5649,
-        //    'PageSize' : pageSize
-        //};
 
         $scope.userData = authService.getCurrentUser();
         //console.log($scope.userData);

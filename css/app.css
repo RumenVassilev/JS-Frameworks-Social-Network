@@ -14,7 +14,7 @@ body {
     margin: 5px;
 }
 a:hover{
-
+    color: salmon;
 }
 #app-header .user-area {
 
@@ -44,7 +44,7 @@ ul.pagination {
     margin: 15px auto;
 }
 a{
-    color: white;
+    color: #00678e;
 }
 ul.ads {
     padding: 0;
@@ -137,7 +137,7 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
 }
 
 .link {
-    color: white;
+    color: #00678e;
     text-decoration: none;
     padding: 0;
     border-bottom: 1px dotted #2E75B6;

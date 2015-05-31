@@ -27,9 +27,17 @@ app.factory('authService',
                 }).error(error);
             },
 
-            logout: function() {
-
-
+            logout: function () {
+            //var request = {
+            //    method: 'POST',
+            //    url: baseServiceUrl + '/api/users/logout',
+            //    headers: authService.getAuthHeaders(),
+            //    data: userData
+            //};
+            //$http(request).success(function(data) {
+            //    delete sessionStorage['currentUser'];
+            //    success(data);
+            //}).error(error);
                 delete sessionStorage['currentUser'];
                 $location.path('/');
                 $rootScope.pageTitle = 'Home';
