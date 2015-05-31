@@ -15,7 +15,7 @@ app.controller('FriendsController',
             friendsServices.getOwnFriends($scope.userData,
                 function success(data) {
                     $scope.friends = data;
-                   // console.log($scope.friends)
+                    console.log($scope.friends)
                 },
                 function error(err) {
                     //console.log(err);

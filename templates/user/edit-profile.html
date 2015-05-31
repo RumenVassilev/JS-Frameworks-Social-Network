@@ -40,19 +40,16 @@
         </div>
     </div>
     <div class="box">
-        <div>
-            <div >
-                <img id="coverPictureData" src="{{userData.coverImageData}}" />
+            <div class="form-group">
+                <img class="thumbnail picture-preview" id="coverPictureData" src="{{userData.coverImageData}}" />
             </div>
             <div >
                 <p><strong>Cover Image:</strong></p>
                 <p class="picture-name"></p>
-                <input type="file" id="coverPicture" class="btn btn-md btn-info" />
+                <input type="file" id="cover-picture" class="btn btn-md btn-info" onchange="angular.element(this).scope().fileSelected(this)"/>
                 <p>Size limit: 1028KB</p>
                 <button type="button" ng-value="userData.coverImageData" ng-model="userData.coverImageData" id="upload-cover-file-button" class="btn btn-md btn-info">Upload</button>
-
             </div>
-        </div>
     </div>
     <p>
         <a ng-click="editProfile(userData)" class="button">Edit Profile</a>

@@ -22,7 +22,7 @@ app.config(function ($routeProvider) {
     });
 
     $routeProvider.when('/user/ads/publish', {
-        templateUrl: 'templates/user/publish-new-ad.html',
+        templateUrl: 'templates/user/publish-post.html',
         controller: 'UserPublishNewAdController'
     });
 
