@@ -15,7 +15,7 @@ app.controller('HomeController',
                },
                function error(err) {
                    console.log(err);
-                   notifyService.showError("Cannot load news", err);
+
                }
            );
        };

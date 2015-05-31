@@ -19,6 +19,13 @@
     </li>
 </ul>
 
+<ul class="friends" ng-if="authService.isLoggedIn()">
+    <li ng-repeat="friend in friends" class="box" data-id="{{friend.friend}}">
+        <a href="#/User/{{friend.username}}"><img src="{{friend.profileImageData}}" alt="" style="margin-left: 12px; width: 100px; height: 100px"/></a>
+        <div style="text-align: center;">{{friend.name}}</div>
+    </li>
+</ul>
+
 <div ng-if="posts.posts.length==0" class="box no-data">
     No posts found.
 </div>
