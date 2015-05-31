@@ -13,7 +13,7 @@
         <p>{{post.date}}</p>
         <div>{{post.postContent}}</div>
         <span>{{post.likesCount + 3}}</span>
-        <span>Like</span>
+        <a ng-click="post.likesCount + 1" style="color: #00678e">Like</a>
         <span>{{post.totalCommentsCount}}</span>
         <span>Comments</span>
     </li>

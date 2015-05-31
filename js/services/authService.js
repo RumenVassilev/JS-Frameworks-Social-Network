@@ -28,6 +28,8 @@ app.factory('authService',
             },
 
             logout: function() {
+
+
                 delete sessionStorage['currentUser'];
                 $location.path('/');
                 $rootScope.pageTitle = 'Home';
